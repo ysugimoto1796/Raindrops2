@@ -2,7 +2,8 @@ int index = 1; //used to make raindrops appear on time intervals
 Raindrops[] drops = new Raindrops[100];
 Catcher c1;
 Scoreboard s1;
-int finalScore;
+
+boolean score;
 void setup() {
   size(500, 500);
   for (int i = 0; i < drops.length; i++) {
@@ -10,6 +11,7 @@ void setup() {
   }
   c1=new Catcher();
   s1=new Scoreboard();
+  score= false;
 }
 void draw() {
   background(255);
@@ -28,15 +30,7 @@ void draw() {
     }
   }
   if (millis() > 10000){//game over
-  rect(0,0,width,height);
-   finalScore=c1.score;
-   println(finalScore);
-   fill(255);
-   textAlign(CENTER);
-   text("GAME OVER"+"\n"+finalScore,width/2,height/2);
-     for (int i=0; i < index;i++) {
-    drops[i].away();
-     }
+ 
   } 
 }
 
