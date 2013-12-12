@@ -5,6 +5,7 @@ Scoreboard s1;
 End e1;
 boolean start;
 int oldtime;
+PImage For;
 
 void setup() {
   size(500, 500);
@@ -15,9 +16,11 @@ void setup() {
   s1=new Scoreboard();
   e1= new End();
   start= false;
+  For = loadImage("forest.jpg");
 }
 void draw() {
-  background(255);
+  size(For.width, For.height);
+  background(For);
   if (!start) {
     fill(0);
     rect(0, 0, width, height);
