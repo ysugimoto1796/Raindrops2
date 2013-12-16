@@ -3,15 +3,17 @@ class Raindrops {
   PVector v;//velocity of raindrops
   PVector a;// acceleration of raindrops
   int r; //radius of each raindrops
+  PImage candy;
 
   Raindrops() {
     l= new PVector(random(width), 0);
     v= new PVector(0, random(1, 2));
     a= new PVector(0, (random(0, 1)));
     r=int(random(4, 10));
+//    candy= new PImage(;
   }
   void load() {
-    fill(0, 0, 100);
+    fill(random(255), random(255), random(255));
     ellipse(l.x, l.y, r, r);
   }
   void fall() {

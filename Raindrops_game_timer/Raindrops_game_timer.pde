@@ -6,9 +6,9 @@ End e1;
 boolean start;
 int oldtime;
 PImage For;
+int count;
 
 void setup() {
-  size(500, 500);
   for (int i = 0; i < drops.length; i++) {
     drops[i] = new Raindrops();
   }
@@ -17,18 +17,21 @@ void setup() {
   e1= new End();
   start= false;
   For = loadImage("forest.jpg");
+  size(For.width, For.height);
+  count=1;
 }
 void draw() {
-  size(For.width, For.height);
+
   background(For);
   if (!start) {
     fill(0);
     rect(0, 0, width, height);
-    textAlign(CENTER);
+    textAlign(CENTER, CENTER);
     fill(255);
     text("START", width/2, height/2);
   }
   else {
+    count+=1;
     for (int i=0; i < index;i++) {
       drops[i].load();
       drops[i].fall();
@@ -47,9 +50,30 @@ void draw() {
       e1. end(c1);
     }
   }
-}
-  void mousePressed(){
-    start= true;
+  if (keyPressed && key=='a') {
     oldtime=millis();
+    c1.score=0;
+    for (int i=0; i < index;i++) {
+      drops[i].l= new PVector(random(width), 0);
+      drops[i].v= new PVector(0, random(1, 2));
+      drops[i].a= new PVector(0, (random(0, 1)));
+      drops[i].fall();
+    }
+    index= 1;
+  }
+}
+void mousePressed() {
+  start= true;
+  oldtime=millis();
+  if (count>1) {
+    c1.score=0;
+    for (int i=0; i < index;i++) {
+      drops[i].l= new PVector(random(width), 0);
+      drops[i].v= new PVector(0, random(1, 2));
+      drops[i].a= new PVector(0, (random(0, 1)));
+      drops[i].fall();
+    }
+    index= 1;
+  }
 }
 
