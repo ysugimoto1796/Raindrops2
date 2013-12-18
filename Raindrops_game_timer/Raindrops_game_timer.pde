@@ -40,7 +40,6 @@ void draw() {
     b[i].shoot();
     b[i].explode(c1);
     b[i].reset();
-    b[i].drop();
      }
     count+=1;//add times played every run
     for (int i=0; i < index;i++) {
@@ -63,24 +62,13 @@ void draw() {
       e1. end(c1);
     }
   }
-  if (keyPressed && key=='a') {
-    oldtime=millis();
-    c1.score=0;
-    for (int i=0; i < index;i++) {
-      drops[i].l= new PVector(random(width), 0);
-      drops[i].v= new PVector(0, random(1, 2));
-      drops[i].a= new PVector(0, (random(0, 1)));
-      drops[i].fall();
-    }
-    index= 1;
-  }
 }
-void mousePressed() {
+void mousePressed() {//restart after mouseclick
   start= true;
-  oldtime=millis();
+  oldtime=millis();//restart of timer
   if (count>1) {
     c1.score=0;
-    for (int i=0; i < index;i++) {
+    for (int i=0; i < index;i++) {//location, velocity, and acceleration of candy reset
       drops[i].l= new PVector(random(width), 0);
       drops[i].v= new PVector(0, random(1, 2));
       drops[i].a= new PVector(0, (random(0, 1)));
@@ -88,13 +76,13 @@ void mousePressed() {
     }
     index= 1;
     c1.die=0;
-    for (int i=0; i < b.length;i++) {
+    for (int i=0; i < b.length;i++) {//location, velocity, and acceleration of bombs reset
       b[i].location= new PVector(random(width), 0);
       b[i].ve= new PVector(0, random(1, 2));
      b[i].a= new PVector(0, (random(0, 0.1)));
      b[i].amax=0.1;
     }
   }
-  c1.HP=3;
+  c1.HP=3;//health reset
 }
 

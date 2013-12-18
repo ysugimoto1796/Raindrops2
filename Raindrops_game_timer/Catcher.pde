@@ -5,8 +5,8 @@ class Catcher {//thing to "catch" the raindrops
   int score;
   PImage poke;
   float scale;
-  int die;
-  int HP;
+  int die;//times hit by bomb
+  int HP;//health left
   Catcher() {
     scale= 0.09;
     r=60;
@@ -24,16 +24,5 @@ class Catcher {//thing to "catch" the raindrops
     l= new PVector(mouseX, height-100);//catcher moves based on mouse
     ellipse(l.x, l.y, r, r);
   }
-    
-  //void grow(Raindrops[] drops) {
-  //  for (Raindrops d : drops) {
-  //    if (abs(d.l.x + l.x) < r+d.r) {
-  //      d.l.y=0;
-  //      d.l.x=random(width);
-  //      d.v= new PVector(0, random(1, 3));
-  //      println(d.l.x + l.x);
-  //    }
-  //  }
-  //}
 }
 
