@@ -3,6 +3,7 @@ class End{
   End() {
   }
   void end(Catcher c) { 
+    fill(0,255,0);
     rect(0, 0, width, height);
     finalScore=c.score;
     println(finalScore);

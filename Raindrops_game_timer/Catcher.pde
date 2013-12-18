@@ -3,14 +3,22 @@ class Catcher {//thing to "catch" the raindrops
   int r;//radius of catcher
   int s;//velocity of catcher
   int score;
+  PImage poke;
+  float scale;
 
   Catcher() {
-    r=30;
+    scale= 0.09;
+    r=60;
     l= new PVector(mouseX, height-100);
     score = 0;
+    poke= loadImage("pokemon.png");
+    imageMode(CENTER);
+    poke.resize(int(poke.width*scale), int(poke.height*scale));
   }
   void load() {
-    fill(0, 100, 0);
+    noStroke();
+    fill(0, 100, 0,0);
+    image(poke, mouseX, height-100, poke.width, poke.height);
     l= new PVector(mouseX, height-100);//catcher moves based on mouse
     ellipse(l.x, l.y, r, r);
   }
