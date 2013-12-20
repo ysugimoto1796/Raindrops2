@@ -31,7 +31,7 @@ class Bomb {
           c.die+=1;
         c.HP=c.HP-1;
         }
-                 println(c.die);
+//                 println(c.die);
     }
     void reset() {//bombs come back up after falling
       if (location.y>height) {
@@ -44,11 +44,11 @@ class Bomb {
     }
 
     void cat(Catcher c) {
-      if (dist(location.x, location.y, c.l.x, c.l.y) < (bomb.width/2+c.r)) {
+      if (dist(location.x, location.y, c.l.x, c.l.y) < (bomb.width/2+c.r)) {//bomb lowers health 
         location.y=0;
         location.x=random(width);
         ve= new PVector(0, random(1, 3));
-        println("hit");
+//        println("hit");
         //      println(l.x + c.l.x);
       }
     }
