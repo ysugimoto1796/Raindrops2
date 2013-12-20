@@ -10,6 +10,8 @@ PImage For;//background forest
 int count;//used to find how many times replayed
 
 void setup() {
+   For = loadImage("forest.jpg");
+    size(For.width, For.height);
   for (int i = 0; i < drops.length; i++) {
     drops[i] = new Raindrops();
   }
@@ -20,8 +22,6 @@ void setup() {
   for (int i = 0; i < b.length; i++) {
     b[i] = new Bomb();
   }
-  For = loadImage("forest.jpg");
-  size(For.width, For.height);
   count=1;
 }
 void draw() {

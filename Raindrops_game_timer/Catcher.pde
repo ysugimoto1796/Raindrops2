@@ -21,7 +21,7 @@ class Catcher {//thing to "catch" the raindrops
     noStroke();
     fill(0, 100, 0,0);
     image(poke, mouseX, height-50, poke.width, poke.height);
-    l= new PVector(mouseX, height-100);//catcher moves based on mouse
+    l= new PVector(mouseX, height-50);//catcher moves based on mouse
     ellipse(l.x, l.y, r, r);
   }
 }
