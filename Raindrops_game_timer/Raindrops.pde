@@ -10,7 +10,6 @@ class Raindrops {
     v= new PVector(0, random(1, 2));
     a= new PVector(0, (random(0, 1)));
     r=int(random(4, 10));
-//    candy= new PImage(;
   }
   void load() {
     fill(random(255), random(255), random(255));
@@ -19,7 +18,7 @@ class Raindrops {
   void fall() {
     v. add (a);
     l. add (v);
-    v.limit(5);
+    v.limit(5);//velocity doesn't go above 5
   }
   void reset() {//resets the raindrops after they go off the screen
     if (l.y>height) {

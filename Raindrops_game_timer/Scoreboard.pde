@@ -1,7 +1,7 @@
 class Scoreboard {
   PVector l;
   Scoreboard() {
-    l= new PVector(width/2, 100);
+    l= new PVector(100, 100);
   }
   void printy(Catcher c) {//prints score
   fill(255,0,0);
