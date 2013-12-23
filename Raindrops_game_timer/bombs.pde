@@ -44,7 +44,7 @@ class Bomb {
     }
 
     void cat(Catcher c) {
-      if (dist(location.x, location.y, c.l.x, c.l.y) < (bomb.width/2+c.r)) {//bomb lowers health 
+      if (dist(location.x, location.y, c.l.x, c.l.y) < (bomb.width/2+c.r)) {//bomb lowers health if catcher is hit
         location.y=0;
         location.x=random(width);
         ve= new PVector(0, random(1, 3));
