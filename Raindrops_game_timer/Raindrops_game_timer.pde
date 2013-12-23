@@ -2,6 +2,7 @@ Bomb[] b = new Bomb[2];//array of bombs
 int index = 1; //used to make raindrops appear on time intervals
 Raindrops[] drops = new Raindrops[100];//array of candy
 Catcher c1;// monster to eat candy
+Start st;//start screen declare
 Scoreboard s1;//printing score
 End e1;//end screen
 boolean start;//start screen on off boolean
@@ -18,6 +19,7 @@ void setup() {
   c1=new Catcher();
   s1=new Scoreboard();
   e1= new End();
+  st=new Start();
   start= false;
   for (int i = 0; i < b.length; i++) {
     b[i] = new Bomb();
@@ -25,14 +27,9 @@ void setup() {
   count=1;
 }
 void draw() {
-
-  background(For);
+ background(For);
   if (!start) {
-    fill(0);
-    rect(0, 0, width, height);
-    textAlign(CENTER, CENTER);
-    fill(255);
-    text("START", width/2, height/2);
+   st.screen();
   }
   else {
      for (int i=0; i < b.length;i++) {
