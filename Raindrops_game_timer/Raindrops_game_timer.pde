@@ -62,7 +62,7 @@ void draw() {
 }
 void mousePressed() {//restart after mouseclick
   start= true;
-  oldtime=millis();//restart of timer
+//  oldtime=millis();//restart of timer
   if (count>1) {
     c1.score=0;
     for (int i=0; i < index;i++) {//location, velocity, and acceleration of candy reset
