@@ -28,7 +28,6 @@ class Bomb {
     }
     void explode(Catcher c) {//bombs hurt pokemon
         if (abs(c.l.x - location.x) < 50 && location.y >= height) {//every time the pokemon is hit by the bomb the hit times increases
-          c.die+=1;
         c.HP=c.HP-1;
         }
 //                 println(c.die);

@@ -5,7 +5,6 @@ class Catcher {//thing to "catch" the raindrops
   int score;
   PImage poke;
   float scale;
-  int die;//times hit by bomb
   int HP;//health left
   Catcher() {
     scale= 0.09;

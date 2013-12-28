@@ -55,7 +55,7 @@ void draw() {
         index+=1;
       }
     }
-    if (c1.die>=3) {//game over
+    if (c1.HP<=0) {//game over
       e1. end(c1);
     }
   }
@@ -72,7 +72,6 @@ void mousePressed() {//restart after mouseclick
       drops[i].fall();
     }
     index= 1;
-    c1.die=0;
     for (int i=0; i < b.length;i++) {//location, velocity, and acceleration of bombs reset
       b[i].location= new PVector(random(width), 0);
       b[i].ve= new PVector(0, random(1, 2));
