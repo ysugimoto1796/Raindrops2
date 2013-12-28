@@ -69,7 +69,6 @@ void mousePressed() {//restart after mouseclick
       drops[i].l= new PVector(random(width), 0);
       drops[i].v= new PVector(0, random(1, 2));
       drops[i].a= new PVector(0, (random(0, 1)));
-      drops[i].fall();
     }
     index= 1;
     for (int i=0; i < b.length;i++) {//location, velocity, and acceleration of bombs reset
@@ -78,7 +77,7 @@ void mousePressed() {//restart after mouseclick
      b[i].a= new PVector(0, (random(0, 0.1)));
      b[i].amax=0.1;
     }
+      c1.HP=3;//health reset
   }
-  c1.HP=3;//health reset
 }
 
